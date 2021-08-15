@@ -1,20 +1,19 @@
-let products = [
-  {title: "Book 1", exist: true},
-  {title: "Book 2", exist: false},
-  {title: "Book 3", exist: true},
-  {title: "Book 4", exist: false},
-];
+let products = [];
 
 let filters = {
   searchItem: "",
   availableProducts: false,
 };
 
+let productsJSON = localStorage.getItem("products");
+if (productsJSON !== null) {
+  products = JSON.parse(productsJSON);
+}
+
 let renderProducts = function (products, filters) {
   let filteredProducts = products.filter(function (item) {
     return item.title.toLowerCase().includes(filters.searchItem.toLowerCase());
   });
-
   filteredProducts = filteredProducts.filter(function (item) {
     if (filters.availableProducts) {
       return item.exist;
@@ -40,6 +39,7 @@ document.querySelector("#add-product-form").addEventListener("submit", function 
     title: e.target.elements.productTitle.value,
     exist: true,
   });
+  localStorage.setItem("products", JSON.stringify(products));
   renderProducts(products, filters);
   e.target.elements.productTitle.value = "";
 });
