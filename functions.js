@@ -26,13 +26,24 @@ let removeProduct = function (id) {
   }
 };
 
+// toggleProduct function :
+
+let toggleProduct = function (id) {
+  let product = products.find(function (item) {
+    return item.id === id;
+  });
+  if (product !== undefined) {
+    product.exist = !product.exist;
+  }
+};
+
 // renderProducts function :
 
 let renderProducts = function (products, filters) {
   let filteredProducts = products.filter(function (item) {
     return item.title.toLowerCase().includes(filters.searchItem.toLowerCase());
   });
-  filteredProducts.filter(function (item) {
+  filteredProducts = filteredProducts.filter(function (item) {
     if (filters.availableProducts) {
       return item.exist;
     } else {
@@ -56,7 +67,13 @@ let createProductDOM = function (product) {
   let removeButton = document.createElement("button");
 
   checkbox.setAttribute("type", "checkbox");
+  checkbox.checked = !product.exist;
   productEl.appendChild(checkbox);
+  checkbox.addEventListener("change", function () {
+    toggleProduct(product.id);
+    saveProducts(products);
+    renderProducts(products, filters);
+  });
 
   productTitle.textContent = product.title;
   productEl.appendChild(productTitle);

@@ -28,3 +28,4 @@ document.querySelector("#available-products").addEventListener("change", functio
   filters.availableProducts = e.target.checked;
   renderProducts(products, filters);
 });
+
