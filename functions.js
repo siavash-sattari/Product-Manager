@@ -37,9 +37,38 @@ let toggleProduct = function (id) {
   }
 };
 
+// sortProducts function :
+
+let sortProducts = function (products, sortBy) {
+  if (sortBy === "byEdited") {
+    return products.sort(function (a, b) {
+      if (a.updated > b.updated) {
+        return -1;
+      } else if (a.updated < b.updated) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  } else if (sortBy === "byCreated") {
+    return products.sort(function (a, b) {
+      if (a.created > b.created) {
+        return -1;
+      } else if (a.created < b.created) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  } else {
+    return products;
+  }
+};
+
 // renderProducts function :
 
 let renderProducts = function (products, filters) {
+  products = sortProducts(products, filters.sortBy);
   let filteredProducts = products.filter(function (item) {
     return item.title.toLowerCase().includes(filters.searchItem.toLowerCase());
   });

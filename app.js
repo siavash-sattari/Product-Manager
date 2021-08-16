@@ -3,6 +3,7 @@ let products = getSaveProducts();
 let filters = {
   searchItem: "",
   availableProducts: false,
+  sortBy: "byEdited",
 };
 
 renderProducts(products, filters);
@@ -37,4 +38,9 @@ window.addEventListener("storage", function (e) {
     products = JSON.parse(e.newValue);
     renderProducts(products, filters);
   }
+});
+
+document.querySelector("#sort").addEventListener("change", function (e) {
+  filters.sortBy = e.target.value;
+  renderProducts(products, filters);
 });
