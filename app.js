@@ -10,7 +10,7 @@ renderProducts(products, filters);
 document.querySelector("#add-product-form").addEventListener("submit", function (e) {
   e.preventDefault();
   products.push({
-    id:uuidv4(),
+    id: uuidv4(),
     title: e.target.elements.productTitle.value,
     exist: true,
   });
@@ -29,3 +29,9 @@ document.querySelector("#available-products").addEventListener("change", functio
   renderProducts(products, filters);
 });
 
+window.addEventListener("storage", function (e) {
+  if (e.key === "products") {
+    products = JSON.parse(e.newValue);
+    renderProducts(products, filters);
+  }
+});
