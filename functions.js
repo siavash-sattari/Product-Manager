@@ -30,7 +30,7 @@ let renderProducts = function (products, filters) {
   });
 
   document.querySelector("#products").innerHTML = "";
-  
+
   filteredProducts.forEach(function (item) {
     document.querySelector("#products").appendChild(createProductDOM(item));
   });
@@ -39,7 +39,19 @@ let renderProducts = function (products, filters) {
 // createProductDOM function :
 
 let createProductDOM = function (product) {
-  let productEl = document.createElement("p");
-  productEl.textContent = product.title;
+  let productEl = document.createElement("div");
+  let checkbox = document.createElement("input");
+  let productTitle = document.createElement("span");
+  let removeButton = document.createElement("button");
+
+  checkbox.setAttribute("type", "checkbox");
+  productEl.appendChild(checkbox);
+
+  productTitle.textContent = product.title;
+  productEl.appendChild(productTitle);
+
+  removeButton.textContent = "Remove";
+  productEl.appendChild(removeButton);
+
   return productEl;
 };
