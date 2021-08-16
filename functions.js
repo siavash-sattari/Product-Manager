@@ -76,7 +76,7 @@ let createProductDOM = function (product) {
   });
 
   productTitle.textContent = product.title;
-  productTitle.setAttribute('href',`/edit-product.html#${product.id}`)
+  productTitle.setAttribute("href", `/edit-product.html#${product.id}`);
   productEl.appendChild(productTitle);
 
   removeButton.textContent = "Remove";
@@ -89,4 +89,8 @@ let createProductDOM = function (product) {
   });
 
   return productEl;
+};
+
+let lastEditMessage = function (timestamp) {
+  return `Last Edit : ${moment(timestamp).locale("fa").fromNow()}`;
 };

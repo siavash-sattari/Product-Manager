@@ -9,10 +9,13 @@ renderProducts(products, filters);
 
 document.querySelector("#add-product-form").addEventListener("submit", function (e) {
   e.preventDefault();
+  let timestamp = moment().valueOf();
   products.push({
     id: uuidv4(),
     title: e.target.elements.productTitle.value,
     exist: true,
+    created: timestamp,
+    updated: timestamp,
   });
   saveProducts(products);
   renderProducts(products, filters);
