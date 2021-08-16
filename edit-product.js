@@ -1,4 +1,5 @@
 let productTitle = document.querySelector("#product-title");
+let productPrice = document.querySelector("#product-price");
 let deleteProduct = document.querySelector("#delete-product");
 let lastEdit = document.querySelector("#last-edit");
 
@@ -15,10 +16,18 @@ if (product === undefined) {
 }
 
 productTitle.value = product.title;
+productPrice.value = product.price;
 lastEdit.textContent = lastEditMessage(product.updated);
 
 productTitle.addEventListener("input", function (e) {
   product.title = e.target.value;
+  product.updated = moment().valueOf();
+  lastEdit.textContent = lastEditMessage(product.updated);
+  saveProducts(products);
+});
+
+productPrice.addEventListener("input", function (e) {
+  product.price = e.target.value;
   product.updated = moment().valueOf();
   lastEdit.textContent = lastEditMessage(product.updated);
   saveProducts(products);
@@ -40,6 +49,7 @@ window.addEventListener("storage", function (e) {
       location.assign("index.html");
     }
     productTitle.value = product.title;
+    productPrice.value = product.price;
     lastEdit.textContent = lastEditMessage(product.updated);
   }
 });

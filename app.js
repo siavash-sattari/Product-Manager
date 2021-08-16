@@ -14,6 +14,7 @@ document.querySelector("#add-product-form").addEventListener("submit", function 
   products.push({
     id: uuidv4(),
     title: e.target.elements.productTitle.value,
+    price: e.target.elements.productPrice.value,
     exist: true,
     created: timestamp,
     updated: timestamp,
@@ -21,6 +22,7 @@ document.querySelector("#add-product-form").addEventListener("submit", function 
   saveProducts(products);
   renderProducts(products, filters);
   e.target.elements.productTitle.value = "";
+  e.target.elements.productPrice.value = "";
 });
 
 document.querySelector("#search-products").addEventListener("input", function (e) {

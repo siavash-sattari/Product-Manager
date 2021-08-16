@@ -93,6 +93,7 @@ let createProductDOM = function (product) {
   let productEl = document.createElement("div");
   let checkbox = document.createElement("input");
   let productTitle = document.createElement("a");
+  let productPrice = document.createElement("span");
   let removeButton = document.createElement("button");
 
   checkbox.setAttribute("type", "checkbox");
@@ -107,6 +108,9 @@ let createProductDOM = function (product) {
   productTitle.textContent = product.title;
   productTitle.setAttribute("href", `/edit-product.html#${product.id}`);
   productEl.appendChild(productTitle);
+
+  productPrice.textContent = product.price;
+  productEl.appendChild(productPrice);
 
   removeButton.textContent = "Remove";
   productEl.appendChild(removeButton);
