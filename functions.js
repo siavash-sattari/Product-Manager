@@ -15,6 +15,17 @@ let saveProducts = function (products) {
   localStorage.setItem("products", JSON.stringify(products));
 };
 
+// removeProduct function :
+
+let removeProduct = function (id) {
+  let productIndex = products.findIndex(function (item) {
+    return item.id === id;
+  });
+  if (productIndex > -1) {
+    products.splice(productIndex, 1);
+  }
+};
+
 // renderProducts function :
 
 let renderProducts = function (products, filters) {
@@ -52,6 +63,12 @@ let createProductDOM = function (product) {
 
   removeButton.textContent = "Remove";
   productEl.appendChild(removeButton);
+
+  removeButton.addEventListener("click", function () {
+    removeProduct(product.id);
+    saveProducts(products);
+    renderProducts(products, filters);
+  });
 
   return productEl;
 };
