@@ -4,19 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Product</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>ویرایش محصولات</title>
   </head>
   <body>
-    <h1>Edit Product</h1>
-    <a href="/index.html">Home</a>
-    <input type="text" id="product-title" placeholder="Product Title">
-    <input type="text" id="product-price" placeholder="product price">
-    <span id="last-edit"></span>
-    <button id="delete-product">Remove</button>
+    <header>
+      <h1>مدیریت محصولات</h1>
+    </header>
+    <main class="edit">
+      <div class="home-btn">
+        <a href="/index.html">صفحه اصلی</a>
+      </div>
+      <input type="text" id="product-title" placeholder="عنوان محصول ..." />
+      <input type="text" id="product-price" placeholder="قیمت محصول ..." />
+      <div id="last-edit"></div>
+      <button id="delete-product">حذف</button>
+    </main>
 
-    <script src="packages/moment.js"></script>
-    <script src="packages/jalali-moment.js"></script>
-    <script src="functions.js"></script>
-    <script src="edit-product.js"></script>
+    <script src="scripts/moment.js"></script>
+    <script src="scripts/jalali-moment.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/edit-product.js"></script>
   </body>
 </html>

@@ -4,27 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Manager</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>مدیریت محصولات</title>
   </head>
   <body>
-    <h1>Book Store</h1>
-    <form id="add-product-form">
-      <input type="text" name="productTitle" placeholder="Product Title ..." />
-      <input type="text" name="productPrice" placeholder="Product Price ..." />
-      <button>Add Product</button>
-    </form>
-    <input type="text" id="search-products" placeholder="Search..." />
-    <select id="sort">
-      <option value="byEdited">By Edited</option>
-      <option value="byCreated">By Created</option>
-    </select>
-    <label> <input type="checkbox" id="available-products" /> Available Products </label>
-    <div id="products"></div>
+    <header>
+      <h1>مدیریت محصولات</h1>
+      <input type="text" id="search-products" placeholder="جست و جو ..." />
+    </header>
 
-    <script src="packages/moment.js"></script>
-    <script src="packages/jalali-moment.js"></script>
-    <script src="packages/uuid.js"></script>
-    <script src="functions.js"></script>
-    <script src="app.js"></script>
+    <main>
+      <select id="sort">
+        <option value="byEdited">مرتب سازی بر اساس آخرین ویرایش</option>
+        <option value="byCreated">مرتب سازی بر اساس تاریخ ساختن</option>
+      </select>
+      <label> <input type="checkbox" id="available-products" /> محصولات موجود </label>
+      <form id="add-product-form">
+        <input type="text" name="productTitle" placeholder="عنوان محصول ..." />
+        <input type="text" name="productPrice" placeholder="قیمت محصول ..." />
+        <button>افزودن</button>
+      </form>
+      <div id="products"></div>
+    </main>
+
+    <script src="scripts/moment.js"></script>
+    <script src="scripts/jalali-moment.js"></script>
+    <script src="scripts/uuid.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/app.js"></script>
   </body>
 </html>

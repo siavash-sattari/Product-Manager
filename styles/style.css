@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "Vazir-FD";
+  src: url("../fonts/Vazir-FD.woff");
+}
+
+body {
+  margin: 0;
+  font-family: "Vazir-FD";
+  direction: rtl;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #8e24aa;
+  height: 80px;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 1.4em;
+  margin-right: 100px;
+}
+
+header #search-products {
+  border-radius: 10px;
+  border: none;
+  margin: 20px 0 20px 100px;
+  outline: 0;
+  padding: 10px;
+  font-size: 1em;
+  font-family: "Vazir-FD";
+}
+
+main {
+  text-align: center;
+  margin-top: 3em;
+}
+
+main select {
+  width: 18em;
+  padding: 1em;
+  font-size: 1em;
+  font-family: "Vazir-FD";
+  cursor: pointer;
+  border: none;
+  outline: 0;
+  border-radius: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: url(../img/br_down.png) no-repeat center #f9d9ff;
+  background-position-x: 16px;
+}
+
+main label {
+  background: #f9d9ff;
+  padding: 16px;
+  margin-right: 30px;
+  border-radius: 10px;
+}
+
+#add-product-form {
+  margin: 3em 0;
+}
+
+#add-product-form input,
+.edit input {
+  width: 20%;
+  border-radius: 10px;
+  border: 1px solid #e1bee7;
+  margin-left: 1em;
+  outline: 0;
+  padding: 10px;
+  font-size: 1em;
+  font-family: "Vazir-FD";
+}
+
+#add-product-form button {
+  background: #9c27b0;
+  color: #fff;
+  border-radius: 10px;
+  outline: 0;
+  padding: 10px 25px;
+  font-weight: 500;
+  font-family: "Vazir-FD";
+  border: none;
+}
+
+#products .product-title {
+  color: #000;
+  font-weight: 500;
+  font-size: 1.3em;
+  margin-right: 1.4em;
+}
+
+#products .product-price {
+  margin-right: 1.4em;
+  color: #3a3a3a;
+}
+
+#products .remove-button,
+#delete-product {
+  margin-right: 1.4em;
+  padding: 7px 18px;
+  background: #F16F6F;
+  color: #000;
+  border-radius: 15px;
+  outline: 0;
+  font-weight: 500;
+  font-family: "Vazir-FD";
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#products .edit-product {
+  text-decoration: none;
+  margin-right: 1.4em;
+  padding: 7px 18px;
+  background: #B7FBFF;
+  color: #000;
+  border-radius: 15px;
+  outline: 0;
+  font-weight: 500;
+  font-family: "Vazir-FD";
+  border: none;
+  font-size: 1em;
+}
+
+.product-row {
+  width: 60%;
+  padding: 2em;
+  margin: 2em auto;
+  border-radius: 10px;
+  box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+  background-color: #fff;
+}
+
+.home-btn {
+  margin: 2em;
+}
+
+.home-btn a {
+  text-decoration: none;
+  color: #8d24aa;
+  font-size: 1.2em;
+}
+
+#last-edit {
+  color: #616161;
+  margin: 2em;
+}
