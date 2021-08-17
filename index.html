@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/font-awesome.all.min.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <title>مدیریت محصولات</title>
   </head>
@@ -19,10 +20,11 @@
         <option value="byCreated">مرتب سازی بر اساس تاریخ ساختن</option>
       </select>
       <label> <input type="checkbox" id="available-products" /> محصولات موجود </label>
+      <a href="#" class="delete-all-products" title="حذف همه ی محصولات"><i class="fas fa-trash-alt"></i></a>
       <form id="add-product-form">
-        <input type="text" name="productTitle" placeholder="عنوان محصول ..." />
-        <input type="text" name="productPrice" placeholder="قیمت محصول ..." />
-        <button>افزودن</button>
+        <input type="text" name="productTitle" placeholder="عنوان محصول ..." class="title" />
+        <input type="text" name="productPrice" placeholder="قیمت محصول ..." class="price" />
+        <button class="form-btn">افزودن</button>
       </form>
       <div id="products"></div>
     </main>

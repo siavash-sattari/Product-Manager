@@ -13,7 +13,7 @@ if (product === undefined) {
 }
 
 productTitle.value = product.title;
-productPrice.value = product.price;
+productPrice.value = Number(product.price).toLocaleString();
 lastEdit.textContent = lastEditMessage(product.updated);
 
 productTitle.addEventListener("input", (e) => {

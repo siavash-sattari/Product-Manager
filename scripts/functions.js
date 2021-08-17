@@ -1,3 +1,24 @@
+// FormBtnStatus function :
+
+let FormBtnStatus = () => {
+  let allInputs = document.querySelectorAll("#add-product-form input");
+  let pTitle = document.querySelector(".title");
+  let pPrice = document.querySelector(".price");
+  let addBtn = document.querySelector(".form-btn");
+
+  allInputs.forEach(function (item) {
+    item.addEventListener("keyup", () => {
+      let a = pTitle.value;
+      let b = pPrice.value;
+      if (a.trim() != 0 && b.trim() != 0) {
+        addBtn.classList.add("active");
+      } else {
+        addBtn.classList.remove("active");
+      }
+    });
+  });
+};
+
 // getSaveProducts function :
 
 let getSaveProducts = () => {
@@ -102,7 +123,7 @@ let createProductDOM = function (product) {
   productTitle.className = "product-title";
   productEl.appendChild(productTitle);
 
-  productPrice.textContent = `${product.price} تومان`;
+  productPrice.textContent = `${Number(product.price).toLocaleString()} تومان`;
   productPrice.className = "product-price";
   productEl.appendChild(productPrice);
 
@@ -125,6 +146,8 @@ let createProductDOM = function (product) {
 
   return productEl;
 };
+
+// lastEditMessage function :
 
 let lastEditMessage = function (timestamp) {
   return `آخرین ویرایش : ${moment(timestamp).locale("fa").fromNow()}`;

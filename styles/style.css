@@ -62,6 +62,16 @@ main label {
   border-radius: 10px;
 }
 
+.delete-all-products {
+  text-decoration: none;
+  color: #9c27b0;
+  background: #f9d9ff;
+  padding: 16px;
+  margin-right: 30px;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
 #add-product-form {
   margin: 3em 0;
 }
@@ -79,14 +89,20 @@ main label {
 }
 
 #add-product-form button {
-  background: #9c27b0;
-  color: #fff;
+  background: #f9d9ff;
   border-radius: 10px;
   outline: 0;
   padding: 10px 25px;
   font-weight: 500;
   font-family: "Vazir-FD";
+  font-size: 1em;
   border: none;
+}
+
+.active {
+  background: #9c27b0 !important;
+  color: #fff !important;
+  cursor: pointer;
 }
 
 #products .product-title {
@@ -105,7 +121,7 @@ main label {
 #delete-product {
   margin-right: 1.4em;
   padding: 7px 18px;
-  background: #F16F6F;
+  background: #f16f6f;
   color: #000;
   border-radius: 15px;
   outline: 0;
@@ -120,7 +136,7 @@ main label {
   text-decoration: none;
   margin-right: 1.4em;
   padding: 7px 18px;
-  background: #B7FBFF;
+  background: #b7fbff;
   color: #000;
   border-radius: 15px;
   outline: 0;
